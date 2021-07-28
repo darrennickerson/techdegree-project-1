@@ -13,16 +13,19 @@ project 1 - A Random Quote Generator
 
 function getRandomQuote(arr) {
   //get a random quote from the array of objects
-  const randomQuote = arr[Math.floor(Math.random()*arr.length)];
+  const randomQuote = arr[Math.floor(Math.random()*arr.length)]; //check this
   return randomQuote;
 
 };
 
-/**
- * `autoloadQuote` function
+/***
+ * `randomRgb` function 
  */
 
-
+function randomRgb () {
+   let rgbValue = Math.floor(Math.random()* 255) + 1;
+   return rgbValue;
+}
 
 
 /***
@@ -58,6 +61,8 @@ quoteBody = `
 quoteBody += `</p>`
 
 targetContainer.innerHTML = quoteBody;
+
+document.querySelector("body").style.backgroundColor = `rgb(${randomRgb()}, ${randomRgb()}, ${randomRgb()})`;
 };
 
 // Refesh quote every 10 seconds
