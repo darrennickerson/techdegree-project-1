@@ -3,7 +3,8 @@ const quotes = [
       quote: 'Spread love everywhere you go. Let no one ever come to you without leaving happier',
       source: 'Mother Teresa',
       citation: 'Herself',
-      year: '1965'
+      year: '1965',
+      tag: 'Inspirational'
     },
     {
       quote: 'When you reach the end of your rope, tie a knot in it and hang on.',
@@ -22,7 +23,8 @@ const quotes = [
       quote: 'Don\'t judge each day by the harvest you reap but by the seeds that you plant.',
       source: 'Robert Louis Stevenson',
       citation: '',
-      year: ''
+      year: '',
+      tag: 'life'
     },
     {
       quote: 'The future belongs to those who believe in the beauty of their dreams',

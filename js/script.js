@@ -18,6 +18,12 @@ function getRandomQuote(arr) {
 
 };
 
+/**
+ * `autoloadQuote` function
+ */
+
+
+
 
 /***
  * `printQuote` function
@@ -31,6 +37,7 @@ const targetContainer = document.getElementById('quote-box')
 quote = getRandomQuote(quotes);
 
 // quoteBody is the quote contents. It's implied that there will be quote and source for quote. 
+
 quoteBody = `
     <p class="quote"> ${quote.quote}</p>
    <p class="source">${quote.source}
@@ -44,13 +51,22 @@ quoteBody = `
    if (quote.year) {
     quoteBody += `<span class="year">${quote.year}</span>`;
    }
+   if (quote.tag) {
+    document.getElementsByClassName('tags').innerHTML = `<span>${quote.tag}</span>`;
+   }
    
 quoteBody += `</p>`
-
 
 targetContainer.innerHTML = quoteBody;
 };
 
+// Refesh quote every 10 seconds
+
+setInterval(function(){
+  printQuote();
+ }, 10000); // 10 seconds
+
+ 
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!

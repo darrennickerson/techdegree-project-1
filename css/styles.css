@@ -3,12 +3,12 @@
  * Random Quote Generator - CSS
  */
 
- @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i&display=swap");
 
 body {
   background-color: rgb(58, 193, 98);
   color: white;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   padding: 5px;
 }
 
@@ -113,6 +113,17 @@ h1 {
 .year:before {
   content: ", ";
   font-style: normal;
+}
+
+.tags span {
+  background-color: #fff;
+  color: #a9a9a9;
+  display: inline-block;
+  margin: 10px 0px;
+  padding: 20px;
+  border-top: 8px solid red;
+  font-size: 1.9rem;
+  font-family: URW Chancery L, cursive;
 }
 
 @media (min-width: 768px) {
