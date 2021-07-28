@@ -13,7 +13,7 @@ project 1 - A Random Quote Generator
 
 function getRandomQuote(arr) {
   //get a random quote from the array of objects
-  const randomQuote = arr[Math.floor(Math.random()*arr.length)]; //check this
+  const randomQuote = arr[Math.floor(Math.random()*arr.length)];
   return randomQuote;
 
 };
@@ -37,14 +37,19 @@ const printQuote = () => {
 // targetContainer is where the html will be injected in the DOM
 const targetContainer = document.getElementById('quote-box')
 
-quote = getRandomQuote(quotes);
+
+// assign the quote variable to the randomly selected quote from the quotes array
+let quote = getRandomQuote(quotes);
 
 // quoteBody is the quote contents. It's implied that there will be quote and source for quote. 
+let quoteBody = '';
+  
+//Check to see if this object has a tag attribute
+  if (quote.tag) {
+    quoteBody += `<div class="tags">${quote.tag}</div>`;
+  }
 
-quoteBody = `
-    <p class="quote"> ${quote.quote}</p>
-   <p class="source">${quote.source}
-   `;
+quoteBody += `<p class="quote"> ${quote.quote}</p> <p class="source">${quote.source}`;
 
 // Check to see if there is a citation and year for this quote 
 
@@ -54,13 +59,14 @@ quoteBody = `
    if (quote.year) {
     quoteBody += `<span class="year">${quote.year}</span>`;
    }
-   if (quote.tag) {
-    document.getElementsByClassName('tags').innerHTML = `<span>${quote.tag}</span>`;
-   }
-   
-quoteBody += `</p>`
+  quoteBody += `</p>`
+ 
+  
+//inject quoteBody into the target container
 
 targetContainer.innerHTML = quoteBody;
+
+// Change the background color every quote 
 
 document.querySelector("body").style.backgroundColor = `rgb(${randomRgb()}, ${randomRgb()}, ${randomRgb()})`;
 };
